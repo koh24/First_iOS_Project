@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWl-tm-Ytg">
@@ -46,13 +46,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQX-dk-UZu">
-                                <rect key="frame" x="270" y="8" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -62,6 +55,7 @@
                             <constraint firstItem="WMj-9Y-eYy" firstAttribute="leading" secondItem="ug9-4k-SJc" secondAttribute="leading" id="MSP-HI-7I2"/>
                             <constraint firstItem="Rvq-rW-Cym" firstAttribute="centerY" secondItem="cWl-tm-Ytg" secondAttribute="centerY" id="jQa-gj-9kA"/>
                             <constraint firstItem="Rvq-rW-Cym" firstAttribute="leading" secondItem="cWl-tm-Ytg" secondAttribute="leading" constant="20" id="jsX-uJ-e5V"/>
+                            <constraint firstAttribute="trailing" secondItem="WMj-9Y-eYy" secondAttribute="trailing" constant="6" id="nLS-qY-Yxv"/>
                             <constraint firstItem="95d-5z-NWb" firstAttribute="top" secondItem="ug9-4k-SJc" secondAttribute="bottom" constant="5" id="p3n-ku-bZo"/>
                             <constraint firstItem="95d-5z-NWb" firstAttribute="leading" secondItem="ug9-4k-SJc" secondAttribute="leading" id="qGb-sw-Qdp"/>
                         </constraints>
@@ -79,9 +73,7 @@
                 <outlet property="descriptionLabel" destination="95d-5z-NWb" id="YWL-kh-00n"/>
                 <outlet property="iconImgView" destination="Rvq-rW-Cym" id="7LE-yJ-lNr"/>
                 <outlet property="titleLabel" destination="ug9-4k-SJc" id="2xF-Mn-C0r"/>
-                <outlet property="typeLabel" destination="pQX-dk-UZu" id="VwA-Y1-UHl"/>
             </connections>
-            <point key="canvasLocation" x="-616" y="-100"/>
         </tableViewCell>
     </objects>
     <resources>

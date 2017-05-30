@@ -8,8 +8,8 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
-
+class SaveFeedViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -22,7 +22,7 @@ class FeedViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,9 +45,7 @@ class FeedViewController: UIViewController {
         newsArray.append(news)
         newsArray.append(news2)
         newsArray.append(news2)
-        newsArray.append(news2)
-        newsArray.append(news2)
-        newsArray.append(news2)
+        
     }
     
     
@@ -59,15 +57,15 @@ class FeedViewController: UIViewController {
             
             
         }
-          }
+    }
     /*
-    // MARK: - Navigation
-
-       }
-    */
+     // MARK: - Navigation
+     
+     }
+     */
 }
 
-extension FeedViewController: UITableViewDataSource,UITableViewDelegate{
+extension SaveFeedViewController: UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -80,14 +78,14 @@ extension FeedViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsArray.count
     }
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let rowNo = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath) as! FeedTableViewCell
         var news:News = newsArray[rowNo]
         cell.setupUI(news: news)
         return cell
     }
-      //ทำงานเมื่อมีการกดปุ่มแล้ว
+    //ทำงานเมื่อมีการกดปุ่มแล้ว
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rowNo = indexPath.row
         var news:News = newsArray[rowNo]

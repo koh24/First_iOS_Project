@@ -14,9 +14,6 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var accessoryLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,7 +30,7 @@ class FeedTableViewCell: UITableViewCell {
         self.titleLabel.text = news.title
         self.descriptionLabel.text = news.description
         self.accessoryLabel.text = "\(news.author) • \(news.view) views • \(news.createDate)"
-        self.typeLabel.text = news.type
+        self.titleLabel.textColor = UIColor.red
     }
     
 }
