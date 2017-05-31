@@ -21,6 +21,7 @@
 		18F476901EDBD93C007168EB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4768F1EDBD93C007168EB /* FeedViewController.swift */; };
 		18F476921EDBF515007168EB /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F476911EDBF515007168EB /* News.swift */; };
 		18F476951EDC12C6007168EB /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F476941EDC12C6007168EB /* UIColorExtensions.swift */; };
+		680D58031EDE5CB200E6F625 /* Persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680D58021EDE5CB200E6F625 /* Persist.swift */; };
 		68EDCF8D1EDD64BA00580E13 /* SaveFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EDCF8C1EDD64BA00580E13 /* SaveFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		18F4768F1EDBD93C007168EB /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		18F476911EDBF515007168EB /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		18F476941EDC12C6007168EB /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		680D58021EDE5CB200E6F625 /* Persist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persist.swift; sourceTree = "<group>"; };
 		68EDCF8C1EDD64BA00580E13 /* SaveFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				18F476891EDBC2F4007168EB /* View */,
 				18F476881EDBC2E3007168EB /* Model */,
 				18F476571EDBC261007168EB /* AppDelegate.swift */,
+				680D58021EDE5CB200E6F625 /* Persist.swift */,
 				18F476611EDBC261007168EB /* Assets.xcassets */,
 				18F476661EDBC261007168EB /* Info.plist */,
 				18F4765E1EDBC261007168EB /* MyFirstProject.xcdatamodeld */,
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				680D58031EDE5CB200E6F625 /* Persist.swift in Sources */,
 				18F476921EDBF515007168EB /* News.swift in Sources */,
 				18F476951EDC12C6007168EB /* UIColorExtensions.swift in Sources */,
 				18F4765A1EDBC261007168EB /* ViewController.swift in Sources */,
