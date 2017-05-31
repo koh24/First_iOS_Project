@@ -7,21 +7,23 @@
 //
 
 import UIKit
-
+import FaveButton
 class FeedDetailViewController: UIViewController {
 
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var accessoryLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var headerImgView: UIImageView!
+    @IBOutlet var favButton: FaveButton!
+    
     
     var news:News?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.news = News(title: "iOS", description: "Error lets stop doing this", iconImage: #imageLiteral(resourceName: "cheese_flat"), author: "Prayuth", view: 2, createDate: "29/06/60")
-       // Do any additional setup after loading the view.
+//        self.news = News(title: "iOS", description: "Error lets stop doing this", iconImage: #imageLiteral(resourceName: "cheese_flat"), author: "พยุต", view: 2, createDate: "29/06/60")
+        // Do any additional setup after loading the view.
         self.setupUI()
     }
 
@@ -30,13 +32,29 @@ class FeedDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    
+    
     @IBAction func onClickSaveButton(_ sender: Any) {
         print("Click Save Button")
         if let news = self.news{
-        persist.save(news: news)
+            persist.save(news: news)
         }
-        
+        self.setupUI()
     }
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupUI()
+    }
+    
+    
+    
+    
 
     
     func setupUI(){
@@ -45,10 +63,15 @@ class FeedDetailViewController: UIViewController {
             self.titleLabel.text = news.title
             self.detailTextView.text = news.description
             self.accessoryLabel.text = "\(news.author) • \(news.view) views • \(news.createDate)"
-            self.titleLabel.textColor = UIColor.red
+            let isBookmarked:Bool = persist.exist(news: news)
+            self.favButton.isSelected = isBookmarked
+            self.favButton.isUserInteractionEnabled = !isBookmarked
             
         }
-                   }
+        
+        
+        
+    }
     
     /*
     // MARK: - Navigation

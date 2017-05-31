@@ -23,9 +23,16 @@ class SaveFeedViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupTableViewDummyData()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,34 +49,30 @@ class SaveFeedViewController: UIViewController {
      สร้างข้อมูลทดสอบใน TableView
      */
     func setupTableViewDummyData(){
-//        let news:News = News(id: 001 , title: "iOS", description: "Error lets stop doing this", iconImage: #imageLiteral(resourceName: "cheese_flat"), author: "Prayuth", view: 2, createDate: "29/06/60" , category: "MobileApp")
-//        let news2:News = News(id: 002 , title: "Android", description: "5555555555+", iconImage: #imageLiteral(resourceName: "cat"), author: "Yingluck", view: 999999999, createDate: "29/06/60" , category: "Sport")
-//        
-//        newsArray.append(news)
-//        newsArray.append(news2)
-//        newsArray.append(news2)
-        
-        
         self.newsArray = persist.load()
-        self.tableView.reloadData() //Refresh data
-        
+        self.tableView.reloadData()
+
     }
     
     
-    func toFeedDeteilViewController(news:News){
-        
-        if let viewController = self.storyboard?.instantiateViewController(withIdentifier:"FeedDetailViewController") as? FeedDetailViewController{
+    func toSaveFeedDetailViewController(news:News){
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SaveFeedDetailViewController") as? SaveFeedDetailViewController {
             viewController.news = news
             self.navigationController?.pushViewController(viewController, animated: true)
             
-            
         }
     }
+    
     /*
      // MARK: - Navigation
      
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
      }
      */
+    
 }
 
 extension SaveFeedViewController: UITableViewDataSource,UITableViewDelegate{
@@ -85,6 +88,7 @@ extension SaveFeedViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsArray.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let rowNo = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath) as! FeedTableViewCell
@@ -92,15 +96,13 @@ extension SaveFeedViewController: UITableViewDataSource,UITableViewDelegate{
         cell.setupUI(news: news)
         return cell
     }
-    //ทำงานเมื่อมีการกดปุ่มแล้ว
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rowNo = indexPath.row
         var news:News = newsArray[rowNo]
         print(indexPath.row)
-        self.toFeedDeteilViewController(news: news)
+        self.toSaveFeedDetailViewController(news: news)
     }
-    
-    
 }
 
 

@@ -11,7 +11,9 @@ import UIKit
 public let persist: Persist = Persist() //Global Variable
 
 public class Persist {
-    
+    init(){
+        
+    }
     let saveKey = "SaveList"
     
     func save(news: News) {
@@ -20,9 +22,9 @@ public class Persist {
         }
         if var saveArray = UserDefaults.standard.array(forKey: saveKey) as? [SaveDictionary] {
             
-            //เพิ่ม dictionary เข้าไป
             saveArray.append(news.asSaveDictionary)
             UserDefaults.standard.set(saveArray, forKey: saveKey)
+            
         } else {
             // Save first time -- need to create an storing dictionary
             let newsDictionary = [news.asSaveDictionary]
@@ -61,16 +63,14 @@ public class Persist {
 }
 
 typealias SaveDictionary = [String: Any]
+typealias ABCDictionary = [String: Any]
 
 extension News {
     
-    // เอา dictionary แปลงกลับเป็น Obj อีกที
     convenience init(saveDict:SaveDictionary){
         let imageRawDataString = saveDict["iconImage"] as? String ?? ""
         let dataDecoded: Data = Data(base64Encoded: imageRawDataString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters) ?? Data()
 
-        
-        //กำหนดค่าถ้าไม่มีให้ทำตามหลัง ??
         self.init(id: saveDict["id"]                      as? Int     ?? -1,
                   title: saveDict["title"]                as? String  ?? "",
                   description: saveDict["description"]    as? String  ?? "",
