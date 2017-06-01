@@ -14,6 +14,7 @@ public class Persist {
     init(){
         
     }
+    //
     let saveKey = "SaveList"
     
     func save(news: News) {
@@ -31,7 +32,7 @@ public class Persist {
             UserDefaults.standard.set(newsDictionary, forKey: saveKey)
         }
     }
-    
+    //
     func load() -> [News] {
         var newsList: [News] = []
         if let savedNewsList = UserDefaults.standard.array(forKey: saveKey) as? [SaveDictionary] {
@@ -41,7 +42,7 @@ public class Persist {
         }
         return newsList
     }
-    
+    //
     func delete(news: News) {
         if let saveArray = UserDefaults.standard.array(forKey: saveKey) as? [SaveDictionary] {
             let filterArray = saveArray.filter { $0["id"] as? Int != news.asSaveDictionary["id"] as? Int }

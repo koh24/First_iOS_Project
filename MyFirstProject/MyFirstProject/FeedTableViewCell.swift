@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class FeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImgView: UIImageView!
@@ -26,7 +26,8 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     func setupUI(news:News){
-        self.iconImgView.image = news.iconImage
+        self.iconImgView.sd_setImage(with: URL(string: news.imageUrl))
+        //self.iconImgView.image = news.iconImage
         self.titleLabel.text = news.title
         self.descriptionLabel.text = news.description
         self.accessoryLabel.text = "\(news.author) • \(news.view) views • \(news.createDate)"
